@@ -17,7 +17,18 @@ const routesPath = require("./routes");
 //   });
 // });
 // app.use("*", routes);
-app.use("/", routes);
+// app.use("/", routes);
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "success fully get data",
+  });
+});
+app.post("/create", (req, res) => {
+  res.status(201).json({
+    message: "success fully created",
+  });
+});
 
 // Server
 app.listen(port, (err) => {
