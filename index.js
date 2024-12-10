@@ -9,15 +9,15 @@ const app = express();
 app.use(express.json());
 
 const routesPath = require("./routes");
-app.get("*", (req, res) => {
-  res.status(200).json({
-    message: "Successfully used",
-    success: true,
-    error: false,
-  });
-});
+// app.get("*", (req, res) => {
+//   res.status(200).json({
+//     message: "Successfully used",
+//     success: true,
+//     error: false,
+//   });
+// });
 // app.use("*", routes);
-// app.use("/", routes);
+app.use("/", routes);
 
 // Server
 app.listen(port, (err) => {
