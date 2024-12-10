@@ -13,11 +13,12 @@ module.exports.getProducts = async (req, res) => {
 
 // insert a Product
 module.exports.create = async (req, res) => {
+  console.log("hello");
   try {
     const { id, name, quantity } = req.body;
     const newProduct = new Product({ id, name, quantity });
     const product = await newProduct.save();
-    res.status(200).json({ data: { product } });
+    res.status(201).json({ data: { product } });
   } catch (err) {
     console.error(`Error in creating Product ${err.message}`);
     res.status(400).json({ error: `Bad Request` });
