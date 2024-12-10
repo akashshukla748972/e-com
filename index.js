@@ -8,14 +8,14 @@ const app = express();
 // middleware
 app.use(express.json());
 
-// const routesPath = require('./routes');
-// app.get("*", (req, res) => {
-//   res.status(200).json({
-//     message: "Successfully requested",
-//     success: true,
-//     error: false,
-//   });
-// });
+const routesPath = require("./routes");
+app.get("/msg", (req, res) => {
+  res.status(200).json({
+    message: "Successfully requested",
+    success: true,
+    error: false,
+  });
+});
 app.use("*", routes);
 app.use("/", routes);
 
